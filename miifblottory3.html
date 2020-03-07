@@ -213,8 +213,8 @@
             var userlist = $('.username')
             console.log(userlist.length)
             for(var k=0;k<userlist.length;k++){
-              $('.progress-bar').attr('aria-valuemax', shares.length).attr('aria-valuenow', i).css('width',
-                parseInt(i*100/shares.length) + '%');
+//               $('.progress-bar').attr('aria-valuemax', shares.length).attr('aria-valuenow', i).css('width',
+//                 parseInt(i*100/shares.length) + '%');
               var found = false
               var tr = userlist[k]
               found = shares.find((sh, i) => {
