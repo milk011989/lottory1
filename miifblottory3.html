@@ -230,14 +230,14 @@
                         $(tr).parents('.list-group-item ').addClass('list-group-item-dark')
                         $(tr).parents('.list-group-item ').find('.postshare').html('❺分享貼文: ')
                     }
-                })
+                }
                 if (i === shares.length - 1) {
                     console.log('分享分析完成')
                     // $('.list-group-item ').find('.postshare').html()
                     $('.progress').hide()
                     $('#progressText').html('分享分析完成')
                 }
-            }
+            })
         });
     }
 
