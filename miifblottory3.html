@@ -212,11 +212,11 @@
             console.log(shares.length)
             var userlist = $('.username')
             console.log(userlist.length)
-            shares.forEach((sh, i) => {
+            for(var k=0;k<userlist.length;k++){
                 $('.progress-bar').attr('aria-valuemax', shares.length).attr('aria-valuenow', i).css('width',
                 parseInt(i*100/shares.length) + '%');
-                for(var k=0;k<userlist.length;k++){
-                    var tr = userlist[k]
+                var tr = userlist[k]
+                shares.forEach((sh, i) => {
                     // console.log(tr.innerText, sh.name, tr.innerText === sh.name)
                     if (tr.innerText === sh.name) {
                         console.log(tr.innerText, sh.name, tr.innerText === sh.name)
@@ -224,17 +224,17 @@
                         $(tr).parents('.list-group-item ').find('.postshare').html('❺分享貼文: ❤ '+sh.timestamp+'<br /><a target="_blank" href="' +sh.url+'">link</a>')
                         break
                     }
-                    if (k === userlist.length-1) {
+                    if (i === shares.length-1) {
                         $(tr).parents('.list-group-item ').addClass('list-group-item-dark')
                         $(tr).parents('.list-group-item ').find('.postshare').html('❺分享貼文: ')
                     }
-                }
-                if (i === shares.length - 1) {
+                })
+                if (k === userlist.length - 1) {
                     console.log('分享分析完成')
                     $('.progress').hide()
                     $('#progressText').html('分享分析完成')
                 }
-            })
+            }
         });
     }
 
