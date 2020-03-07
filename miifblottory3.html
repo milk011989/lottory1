@@ -43,7 +43,7 @@
     let postID = '2881913551902643' // 2881922228568442 //1578504078910270_2881922228568442/sharedposts
     // https://www.facebook.com/shares/view?id=2881922228568442
     let accessToken =
-    'EAACFtrZARuUsBANMm3haLha4swezpcLv4vM36Eckwo71yY3WE6Xn1S3ldzqjZCivUsguZBp5PB9rb2o40JzNy7NJQ5nzDgZC6NVLGCBSPlirZAU0fctwivfduMh0gg27eoutEp4j4xtBWiZB6fHnFymHZCd5vPEQhgDN17AHpKsyZCD9qgyYQw9VYIowNH5l18kZCFOGQnDGuTgZDZD'
+    'EAACFtrZARuUsBAFBCMI8QyvOI7iciJ6awx97B1CDD1pcsPqoWSlLUwajVIsBsHjp15x2uQQHZAHCHKJaOf9MjWgIxzTsH5eGFP5GSfZACiUUMXVI5Nd3pxA6UN1yNldZChTsH5z6EOJDIiTisI0CNcg8mFENlcDjNVuWLupnbcOGfnxMfAFMNcRgneNSYlcZBL14KRu9xswZDZD'
 
 
 
@@ -206,7 +206,7 @@
 
     function checkShare() {
         $('#progressText').html('❺ 撈取與審核分享貼文...')
-        $.getJSON('./sharesname5.json', function (json) {
+        $.getJSON('./sharesname4.json', function (json) {
             var shares = ''
             shares = json
             console.log(shares.length)
@@ -215,10 +215,8 @@
             shares.forEach((sh, i) => {
                 $('.progress-bar').attr('aria-valuemax', shares.length).attr('aria-valuenow', i).css('width',
                 parseInt(i*100/shares.length) + '%');
-                
                 for(var k=0;k<userlist.length;k++){
-                  var tr = userlist[k]
-                
+                    var tr = userlist[k]
                     // console.log(tr.innerText, sh.name, tr.innerText === sh.name)
                     if (tr.innerText === sh.name) {
                         console.log(tr.innerText, sh.name, tr.innerText === sh.name)
@@ -233,7 +231,6 @@
                 }
                 if (i === shares.length - 1) {
                     console.log('分享分析完成')
-                    // $('.list-group-item ').find('.postshare').html()
                     $('.progress').hide()
                     $('#progressText').html('分享分析完成')
                 }
